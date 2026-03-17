@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.vishal.employeesystem.entity.Role;
 import com.vishal.employeesystem.service.RoleService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
@@ -16,7 +18,7 @@ public class RoleController {
     private RoleService roleService;
 
     @PostMapping
-    public Role createRole(@RequestBody Role role) {
+    public Role createRole( @Valid @RequestBody Role role) {
         return roleService.createRole(role);
     }
 

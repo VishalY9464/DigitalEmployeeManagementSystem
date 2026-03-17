@@ -10,6 +10,8 @@ import com.vishal.employeesystem.dto.RegisterRequestDTO;
 import com.vishal.employeesystem.entity.User;
 import com.vishal.employeesystem.service.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -18,7 +20,7 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping("/register")
-	public User registerUser(@RequestBody RegisterRequestDTO dto) {
+	public User registerUser(@Valid @RequestBody RegisterRequestDTO dto) {
 		return userService.registerUser(dto);
 	}
 

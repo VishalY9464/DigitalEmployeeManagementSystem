@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vishal.employeesystem.dto.LoginRequestDTO;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -19,7 +21,7 @@ public class AuthController {
 	private AuthenticationManager authenticationManager;
 	
 	@PostMapping("/login")
-	public String login(@RequestBody LoginRequestDTO request) {
+	public String login( @Valid @RequestBody LoginRequestDTO request) {
 		authenticationManager.authenticate(
              new UsernamePasswordAuthenticationToken(
             		 request.getUsername(),

@@ -17,6 +17,8 @@ import com.vishal.employeesystem.dto.EmployeeRequestDTO;
 import com.vishal.employeesystem.entity.Employee;
 import com.vishal.employeesystem.service.EmployeeService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -25,7 +27,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@PostMapping
-	public ResponseEntity<Employee> addEmployee(@RequestBody EmployeeRequestDTO dto){
+	public ResponseEntity<Employee> addEmployee( @Valid @RequestBody EmployeeRequestDTO dto){
 		Employee emp=employeeService.addEmployee(dto);
 		return ResponseEntity.ok(emp);	
 	}
