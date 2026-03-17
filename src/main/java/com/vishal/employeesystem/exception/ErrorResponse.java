@@ -18,10 +18,10 @@ public class ErrorResponse {
     // For single message errors → 404, 500
     public static ErrorResponse of(int status, String message) {
         ErrorResponse r = new ErrorResponse();
-        r.timestamp = LocalDateTime.now();
-        r.status    = status;
-        r.message   = message;
-        return r;
+          r.timestamp = LocalDateTime.now();
+          r.status    = status;
+          r.message   = message;
+          return r;
     }
 
     // For field-level validation errors → 400

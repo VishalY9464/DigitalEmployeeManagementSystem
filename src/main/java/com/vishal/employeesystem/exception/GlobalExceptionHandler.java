@@ -18,7 +18,8 @@ public class GlobalExceptionHandler {
             MethodArgumentNotValidException ex) {
 
         Map<String, String> fieldErrors = new LinkedHashMap<>();
-
+        
+        
         ex.getBindingResult()
           .getFieldErrors()
           .forEach(error ->

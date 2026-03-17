@@ -20,7 +20,7 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping("/register")
-	public User registerUser(@Valid @RequestBody RegisterRequestDTO dto) {
+	public User registerUser( @Valid @RequestBody RegisterRequestDTO dto) {
 		return userService.registerUser(dto);
 	}
 
